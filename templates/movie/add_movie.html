@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-6" style="margin: auto">
+            <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+
+                <form action="" class="user_card" method="POST" enctype="multipart/form-data" style="margin: auto">
+                    {% csrf_token %}
+                    {{ form.management_form }}
+
+                    {% for field in form %}
+                        {{ field.label_tag }}
+                        {{ field }}
+
+                        <hr>
+                    {% endfor %}
+
+                    <input type="submit" name="Submit">
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

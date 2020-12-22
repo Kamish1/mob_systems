@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="left-ads-display col-lg-8">
+        <div class="row">
+            <div class="desc1-left col-md-8" style="margin: auto">
+                <img src="{{ movie.poster.url }}" class="img-fluid" alt="" style="margin: auto">
+            </div>
+            <div class="desc1-right col-md-6 pl-lg-4">
+                <h3 class="editContent" style="outline: none; cursor: inherit;">
+                    {{ movie.title }}
+                </h3>
+                <h5 class="editContent"></h5>
+                <ul>
+                    <li style="list-style: none">
+                        <span><b>Released:</b> {{ movie.released }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Country:</b> {{ movie.country }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Rated:</b> {{ movie.rated }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Runtime:</b> {{ movie.runtime }}</span>
+                    </li>
+
+                    <li style="list-style: none">
+                        <span><b>Genre:</b> {{ movie.genre }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Director:</b> {{ movie.director }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Writer:</b> {{ movie.writer }}</span></li>
+                    <li style="list-style: none">
+                        <span><b>Actors:</b> {{ movie.actors }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Plot:</b> {{ movie.plot }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Language:</b> {{ movie.language }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Awards:</b> {{ movie.awards }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Votes:</b> {{ movie.imdbVotes }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Rating:</b> {{ movie.imdbRating }}/10</span>
+                    </li>
+                    <li style="list-style: none">
+                        <span><b>Production:</b> {{ movie.production }}</span>
+                    </li>
+                    <li style="list-style: none">
+                        <button type="button" class="btn btn-danger" style="margin: auto">
+                            <a onclick="return confirm('Are you sure you want to delete this post?');"
+                               class="p-2 text-muted" href="{% url 'delete_movie' movie.id %}">Delete this movie?</a>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
